@@ -13,4 +13,4 @@ INSTALLATION
   * CentOS:  # yum install fuse-devel perl-Fuse
   * Debian:  # apt-get install libfuse-dev libfuse-perl
 
-* Start csi.pl as root.
+* Run 'install' as root
