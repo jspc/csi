@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# Install csi
+
+if [ "$(whoami)" != "root" ]; then
+    echo "You must run this as root"
+    exit -1
+fi
+
+# Be lazy; drop in the first perl lib
+
+LIB=$(perl -e 'print "$INC[0]"')
+
+cp -vr src/lib/CSI/ $LIB/
+cp src/bin/csi.pl /usr/sbin/
+
+exit 0
+
