@@ -11,17 +11,15 @@ use threads;
 use threads::shared;
 use CWD;
 
-my $cwd = getcwd;
-my $hdr = $ENV{ 'HOME' };
-use dir "$cwd/lib";
-use dir "$hdr/lib";
+use lib getcwd() . "/lib";
+use lib $ENV{HOME} . "/lib";
 
 use CSI::Time;
 use CSI::Sys;
 use CSI::FS;
 use CSI::Rand;
 
-my $mpoint = $argv[1] || "/csi";
+my $mpoint = $ARGV[0] || "/csi";
 my $debug  = 0;
 
 # Some things will remain static and so re-working them each time
