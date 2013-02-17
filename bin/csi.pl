@@ -9,7 +9,7 @@ use warnings;
 use Fuse::Simple qw( :all );       # OTT, but easiest
 use threads;
 use threads::shared;
-use CWD;
+use Cwd;
 
 use lib getcwd() . "/lib";
 use lib $ENV{HOME} . "/lib";
