@@ -9,6 +9,12 @@ use warnings;
 use Fuse::Simple qw( :all );       # OTT, but easiest
 use threads;
 use threads::shared;
+use CWD;
+
+my $cwd = getcwd;
+my $hdr = $ENV{ 'HOME' };
+use dir "$cwd/lib";
+use dir "$hdr/lib";
 
 use CSI::Time;
 use CSI::Sys;
